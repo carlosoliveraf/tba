@@ -1,10 +1,14 @@
 var express = require('express');
+var engine = require('consolidate');
+
 
 var bodyParser = require('body-parser');
 
 var app = module.exports = express();
 
-app.set('views', '/views');
+app.set('views', __dirname + '/views');
+app.engine('html', engine.mustache);
+app.set('view engine', 'html');
 
 app.set('port', (process.env.PORT || 5000));
 
