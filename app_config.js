@@ -4,12 +4,17 @@ var bodyParser = require('body-parser');
 
 var app = module.exports = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-app.listen(5000);
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
 app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
