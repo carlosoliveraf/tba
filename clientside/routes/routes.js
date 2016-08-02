@@ -10,6 +10,10 @@
             templateUrl: 'templates/second.html'
             ,controller: 'secondCtrl'
         })
+        .when('/charactersscreen', {
+        templateUrl: 'templates/characters.html',
+        controller: 'characterCtrl',
+        })
         .otherwise({
             redirectTo: '/'
         });
@@ -20,3 +24,7 @@
     .controller('secondCtrl', ['$scope', function ($scope){
         $scope.helloWorld = "World Hello";
     }]);
+
+
+
+
