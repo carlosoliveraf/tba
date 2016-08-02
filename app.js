@@ -21,7 +21,7 @@ app.get('index/', function (req, res) {
 	
 	//userController.list(function(resp){
 		//res.json(resp);
-		res.render('abc');
+		
 
 	//});
 
