@@ -10,32 +10,11 @@
     
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="clientside/app.js"></script>
+    <script src="clientside/routes/routes.js"></script>
 
 
-    <script type="text/javascript" charset="utf-8">
-    angular.module('main', ['ngRoute'])
-    .config(['$routeProvider', function ($routeProvider){
-        console.log('hola');
-        $routeProvider
-        .when('/', {
-            templateUrl: 'templates/index.html'
-            ,controller: 'indexCtrl'
-        })
-        .when('/second', {
-            templateUrl: 'templates/second.html'
-            ,controller: 'secondCtrl'
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
-    }])
-    .controller('indexCtrl', ['$scope', function ($scope){
-        $scope.helloWorld = "Hello World";
-    }])
-    .controller('secondCtrl', ['$scope', function ($scope){
-        $scope.helloWorld = "World Hello";
-    }]);
-    </script>
+
   <!--   <section ng-view=""></section> -->
   
 	<div id="title" style="width: 100%">
