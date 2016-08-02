@@ -8,11 +8,12 @@ var app = module.exports = express();
 
 //app.set('views', __dirname + '/views');
 //app.engine('html', engine.mustache);
-//app.set('view engine', 'html');
+app.set('view engine', 'html');
 
 app.set('port', (process.env.PORT || 5000));
 
 app.use(bodyParser.json());
+app.use(express.static(__dirname));
 
 app.use(bodyParser.urlencoded({
 	extended: true
@@ -29,6 +30,8 @@ app.all('*', function(req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type, x-access-token');
   next();
 });
+
+
 
 
 
