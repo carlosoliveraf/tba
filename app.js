@@ -20,7 +20,8 @@ app.get('/', function (req, res) {
 	
 	//userController.list(function(resp){
 		//res.json(resp);
-		res.write("bigas biba master");
+		res.render('index');
+
 	//});
 
 
