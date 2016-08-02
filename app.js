@@ -20,7 +20,7 @@ app.get('/itens', function (req, res) {
 	
 	//userController.list(function(resp){
 		//res.json(resp);
-		res.write("teste");
+		res.write("bigas biba master");
 	//});
 
 
