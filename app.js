@@ -15,13 +15,14 @@ var itens = [
 ];
 
 
+
 app.get('/', function (req, res) {
 	//res.status(500).end();
 	
 	//userController.list(function(resp){
 		//res.json(resp);
-		res.render('index');
-
+		res.render('index.html');
+		
 	//});
 
 
