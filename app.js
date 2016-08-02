@@ -18,9 +18,10 @@ var itens = [
 app.get('/itens', function (req, res) {
 	//res.status(500).end();
 	
-	userController.list(function(resp){
-		res.json(resp);
-	});
+	//userController.list(function(resp){
+		//res.json(resp);
+		res.write("teste");
+	//});
 
 
 
