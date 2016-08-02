@@ -17,12 +17,12 @@ var itens = [
 
 
 app.get('/', function (req, res) {
-    res.render('index.html');
+    res.render('index');
 });
 
 
 app.get('*', function (req, res) {
-    res.render('index.html');
+    res.render('index');
 });
 
 // app.get('index/', function (req, res) {
