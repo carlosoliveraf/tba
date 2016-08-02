@@ -16,7 +16,16 @@ var itens = [
 
 
 
-app.get('index/', function (req, res) {
+app.get('/', function (req, res) {
+    res.render('index.html');
+});
+
+
+app.get('*', function (req, res) {
+    res.render('index.html');
+});
+
+// app.get('index/', function (req, res) {
 	//res.status(500).end();
 	
 	//userController.list(function(resp){
@@ -28,7 +37,7 @@ app.get('index/', function (req, res) {
 
 
 	//res.json(itens);
-});
+// });
 
 app.get('/itens/:id', function (req, res) {
 

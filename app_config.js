@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 
 var app = module.exports = express();
 
+app.set('views', '/views');
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(bodyParser.json());
