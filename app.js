@@ -15,7 +15,7 @@ var itens = [
 ];
 
 
-app.get('/itens', function (req, res) {
+app.get('/', function (req, res) {
 	//res.status(500).end();
 	
 	//userController.list(function(resp){
