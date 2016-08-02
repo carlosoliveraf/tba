@@ -14,16 +14,24 @@ var itens = [
 	{description: "Café", price: 4}
 ];
 
-
-
-app.get('/', function (req, res) {
-    res.render('index');
+app.get('/', function(req, res) {
+    res.sendfile('index.html', {root: __dirname })
+});
+app.get('/index', function (req, res){
+    res.sendfile('templates/index.html', {root: __dirname })
+});
+app.get('/second', function (req, res){
+    res.sendfile('templates/second.html', {root: __dirname })
 });
 
+// app.get('/', function (req, res) {
+//     res.render('index');
+// });
 
-app.get('*', function (req, res) {
-    res.render('index');
-});
+
+// app.get('*', function (req, res) {
+//     res.render('index');
+// });
 
 // app.get('index/', function (req, res) {
 	//res.status(500).end();
