@@ -16,7 +16,7 @@ var itens = [
 
 
 
-app.get('/', function (req, res) {
+app.get('index/', function (req, res) {
 	//res.status(500).end();
 	
 	//userController.list(function(resp){
