@@ -6,6 +6,10 @@
             templateUrl: 'templates/index.html'
             ,controller: 'indexCtrl'
         })
+        .when('/home', {
+            templateUrl: 'templates/index.html'
+            ,controller: 'indexCtrl'
+        })
         .when('/second', {
             templateUrl: 'templates/second.html'
             ,controller: 'secondCtrl'
