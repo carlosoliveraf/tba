@@ -15,8 +15,8 @@
     <script src="clientside/controllers/indexCtrl.js"></script>
     <script src="clientside/controllers/characterCtrl.js"></script>
     <script src="clientside/controllers/huntingplacesCtrl.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 
@@ -34,6 +34,8 @@
 
       </ul>
       </div>
+  
+	<div id="view" ng-view></div>
     <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
   <span class="caret"></span></button>
@@ -43,7 +45,6 @@
     <li><a href="#">JavaScript</a></li>
   </ul>
 </div>
-	<div id="view" ng-view></div>
 </body>
 </html>
 
