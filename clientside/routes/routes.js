@@ -10,18 +10,18 @@
             templateUrl: 'templates/second.html'
             ,controller: 'secondCtrl'
         })
-        .when('/charactersscreen', {
+        .when('/charactersview', {
         templateUrl: 'templates/characters.html',
         controller: 'characterCtrl',
+        })
+        .when('/huntingplacesview', {
+        templateUrl: 'templates/huntingplaces.html',
+        controller: 'huntingplacesCtrl',
         })
         .otherwise({
             redirectTo: '/'
         });
-    }])
-    .controller('indexCtrl', ['$scope', function ($scope){
-        $scope.helloWorld = "Hello World";
-    }])
-    .controller('secondCtrl', ['$scope', function ($scope){
+    }]).controller('secondCtrl', ['$scope', function ($scope){
         $scope.helloWorld = "World Hello";
     }]);
 
