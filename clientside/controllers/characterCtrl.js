@@ -64,7 +64,7 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 			character.equipments.amulet = "amulet";
 			character.owner = "carlos";
 			console.log(character);
-			var res = $http.post('https://blooming-headland-84997.herokuapp.com/characs/', character);
+			var res = $http.post('https://blooming-headland-84997.herokuapp.com/charac/', character);
 
 
 			res.success(function(data, status, headers, config) {
