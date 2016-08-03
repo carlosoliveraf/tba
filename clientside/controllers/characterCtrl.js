@@ -35,7 +35,7 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 			console.log("post");
 			
 			console.log(character);
-			var res = $http.post('http://127.0.0.1:5000/characters/', character);
+			var res = $http.post('https://blooming-headland-84997.herokuapp.com/characters/', character);
 
 
 			res.success(function(data, status, headers, config) {
