@@ -27,7 +27,7 @@
         controller: 'huntingplacesCtrl',
         })
         .when('/newplaceview', {
-        templateUrl: 'templates/neweplaceview.html',
+        templateUrl: 'templates/newplaceview.html',
         controller: 'huntingplacesCtrl',
         })
         .otherwise({
