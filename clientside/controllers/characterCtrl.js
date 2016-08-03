@@ -54,6 +54,7 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 		
 		$scope.saveCharacter = function(character){
 			console.log("post");
+			character.equipments = [];
 			character.equipments.helmet = "helm";
 			character.equipments.armor = "armor";
 			character.equipments.legs = "legs";
