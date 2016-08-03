@@ -3,6 +3,8 @@ var app = require('./app_config.js');
 
 var userController = require('./controller/userController.js');
 var characterController = require('./controller/characterCtrl.js');
+var characController = require('./controller/characCtrl.js');
+
 
 var validator = require('validator');
 
@@ -158,6 +160,32 @@ app.put('/characters/:id', function (req, res) {
 	characterController.update(id, name, level, stamina, vocation, function(resp){
 		res.json(resp);
 
+	});
+
+});
+
+//teste charac
+
+app.get('/charac', function (req, res) {
+	
+	characController.list(function(resp){
+		res.json(resp);
+	});
+
+});
+
+app.post('/charac', function (req, res) {
+
+	var name = validator.trim(validator.escape(req.param('name')));
+	var level = validator.trim(validator.escape(req.param('level')));
+	var vocation = validator.trim(validator.escape(req.param('vocation')));
+	var stamina = validator.trim(validator.escape(req.param('stamina')));
+	var equipments = req.param('equipments');
+	var owner = validator.trim(validator.escape(req.param('owner')));
+
+
+	characController.save(name, level, vocation, stamina, equipments, owner, function(resp){
+		res.json(resp);
 	});
 
 });

@@ -31,11 +31,39 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 
 		$scope.findCharacters();
 
+
+		// $scope.saveCharacter = function(character){
+		// 	console.log("post");
+			
+
+		// 	console.log(character);
+		// 	var res = $http.post('https://blooming-headland-84997.herokuapp.com/characters/', character);
+
+
+		// 	res.success(function(data, status, headers, config) {
+		// 	$scope.message = data;
+		// 	});
+		// 	res.error(function(data, status, headers, config) {
+		// 	alert( "failure message: " + JSON.stringify({data: data}));
+		// 	});		
+  //   		$scope.characters.push(character);
+  //   		$scope.newCharacter = false;
+		// 	delete $scope.character;
+
+		// };
+		
 		$scope.saveCharacter = function(character){
 			console.log("post");
-			
+			character.equipments.helmet = "helm";
+			character.equipments.armor = "armor";
+			character.equipments.legs = "legs";
+			character.equipments.boots = "boots";
+			character.equipments.melee = "melee";
+			character.equipments.shield = "shield";
+			character.equipments.amulet = "amulet";
+			character.owner = "carlos";
 			console.log(character);
-			var res = $http.post('https://blooming-headland-84997.herokuapp.com/characters/', character);
+			var res = $http.post('https://blooming-headland-84997.herokuapp.com/characs/', character);
 
 
 			res.success(function(data, status, headers, config) {
@@ -49,7 +77,8 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 			delete $scope.character;
 
 		};
-		
+
+
 		$scope.eraseCharacter = function (character) {
 			var id = character._id;
 			console.log(id);

@@ -24,10 +24,31 @@ db.once('open', function(){
 		level: Number,
 		stamina: Number,
 		vocation: String,
+
 		
 	});
 
 	exports.Character = mongoose.model('Character', characterSchema);
+
+	var characSchema = mongoose.Schema({
+		name: String,
+		level: Number,
+		vocation: String,
+		stamina: Number,
+		balance: Number,
+		equipments: {
+			helmet: String,
+			armor: String,
+			legs: String,
+			boots: String,
+			melee: String,
+			shield: String,
+			amulet: String,
+		},
+		owner: String
+	});
+
+	exports.Charac = mongoose.model('charac', characSchema);
 
 });
 
