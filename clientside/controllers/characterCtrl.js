@@ -76,26 +76,8 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 		$scope.direction = !$scope.direction;
 		};
 
-	
-		$scope.showNewCharacterInput = function(){
-			$scope.newCharacter = !$scope.newCharacter;
-			$scope.charactersList = false;
-			$scope.charactersStats = false;
-			delete $scope.newcharacter;
-			delete $scope.character;
 
-		}
-
-		$scope.showCharactersList = function(){
-			$scope.charactersList = !$scope.charactersList;
-			$scope.newCharacter = false;
-			$scope.charactersStats = false;
-			delete $scope.character;
-			delete $scope.newcharacter;
-
-
-
-		}
+		
 
 		$scope.showCharactersStats = function(){
 			$scope.charactersStats = !$scope.charactersStats;
