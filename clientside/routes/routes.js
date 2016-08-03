@@ -14,6 +14,10 @@
         templateUrl: 'templates/characters.html',
         controller: 'characterCtrl',
         })
+        .when('/newcharactersview', {
+        templateUrl: 'templates/newcharactersview.html',
+        controller: 'characterCtrl',
+        })
         .when('/huntingplacesview', {
         templateUrl: 'templates/huntingplaces.html',
         controller: 'huntingplacesCtrl',

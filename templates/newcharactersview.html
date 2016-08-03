@@ -1,0 +1,20 @@
+	<button ng-click="showNewCharacterInput()" style="margin: 2%" class="btn btn-default btn-sm">New Character!</button>
+
+<div style="width: 90%; display: table" ng-if="newCharacter">
+
+<form name="characterForm" novalidate>
+	<input type="text" style="margin: 2%; background-color: #dadcdc; width: 45%; float: left;" class="form-control" ng-model="newcharacter.name" name="name" placeholder="Character Name" ng-required="true"/>
+	<select ng-model="newcharacter.vocation" style="margin: 2%; background-color: #dadcdc; width: 45%; float: right;" class="form-control" name="vocation" ng-options="vocation for vocation in vocations">
+		<option value="">Select the vocation</option>
+	</select>
+	<!-- <input type="text" style="margin: 2%" class="form-control" ng-model="character.vocation" name="vocation" placeholder="Character Voc" ng-required="true"/> -->
+
+	<input type="text" style="margin: 2%; background-color: #dadcdc ; width: 45%; float: left;" class="form-control" ng-model="newcharacter.level" name="level" placeholder="Level" ng-required="true"/>
+	
+	<input type="text" style="margin: 2%; background-color: #dadcdc; width: 45%; float: right;" class="form-control" ng-model="newcharacter.stamina" name="stamina" placeholder="Stamina" ng-required="true"/>
+
+	<button ng-click="saveCharacter(newcharacter)" style="margin: 2%; float: left;" class="btn btn-success btn-sm" ng-disabled="characterForm.$invalid">Create Character</button>
+	<button ng-click="clearFields(newcharacter)" style="margin: 2%" class="btn btn-warning btn-sm">Clear Fields</button>
+</form>
+
+</div>
