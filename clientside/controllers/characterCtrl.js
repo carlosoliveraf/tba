@@ -53,7 +53,7 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 		$scope.eraseCharacter = function (character) {
 			var id = character._id;
 			console.log(id);
-			var res = $http.delete('http://127.0.0.1:5000/characters/'+id);
+			var res = $http.delete('https://blooming-headland-84997.herokuapp.com/characters/'+id);
 			res.success(function(data, status, headers, config) {
 			$scope.message = data;
 			var posicao = $scope.characters.indexOf(character);
