@@ -34,23 +34,43 @@
 
     
   
-  <div id="menu">
+    <div id="menu">
       <ul style="color: white; padding: 1%" class="nav nav-tabs">
-         <li class="marginPerson"><div class="dropdown"><a href="#/home" class="btn btn-default btn-sm">Home</a></div></li>
-        <li class="marginPerson"><div class="dropdown">
-  <button class="btn btn-default btn-sm" type="button" data-toggle="dropdown">Characters
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#/mycharactersview">My Characters</a></li>
-    <li><a href="#/newcharactersview">New Character</a></li>
-    <li><a href="#">Characters Stats</a></li>
-  </ul>
-</div> </li>        <li class="marginPerson"><div class="dropdown"><a href="#/huntingplacesview" class="btn btn-default btn-sm">Hunting Places</a></div></li>
-         <li class="marginPerson"><div class="dropdown"><a href="#/readytohuntview" class="btn btn-default btn-sm">Ready to Hunt</a></div></li>
+        <li class="marginPerson">
+          <div class="dropdown"><a href="#/home" class="btn btn-default btn-sm">Home</a>
+          </div>
+        </li>
+        <li class="marginPerson">
+          <div class="dropdown">
+            <button class="btn btn-default btn-sm" type="button" data-toggle="dropdown">Characters
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#/mycharactersview">My Characters</a></li>
+              <li><a href="#/newcharactersview">New Character</a></li>
+              <li><a href="#">Characters Stats</a></li>
+            </ul>
+          </div>
+        </li>        
 
+        <li class="marginPerson">
+          <div class="dropdown">
+            <button class="btn btn-default btn-sm" type="button" data-toggle="dropdown">Hunting Places
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#/listplacesview">List Places</a></li>
+              <li><a href="#/newplaceview">New Place</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="marginPerson">
+          <div class="dropdown"><a href="#/readytohuntview" class="btn btn-default btn-sm">Ready to Hunt</a>
+          </div>
+        </li>
       </ul>
-      </div>
-      <div id="view" ng-view></div>
+    </div>
+    <div id="view" ng-view></div>
 </body>
 </html>
 
