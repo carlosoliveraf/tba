@@ -22,8 +22,12 @@
         templateUrl: 'templates/newcharactersview.html',
         controller: 'characterCtrl',
         })
-        .when('/huntingplacesview', {
-        templateUrl: 'templates/huntingplaces.html',
+        .when('/listplacesview', {
+        templateUrl: 'templates/listplacesview.html',
+        controller: 'huntingplacesCtrl',
+        })
+        .when('/newplaceview', {
+        templateUrl: 'templates/neweplaceview.html',
         controller: 'huntingplacesCtrl',
         })
         .otherwise({
