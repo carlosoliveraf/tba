@@ -34,8 +34,12 @@
         templateUrl: 'templates/aboutmeview.html',
         controller: 'aboutmeCtrl',
         })
+        .when('/404errorview', {
+        templateUrl: 'templates/404errorview.html',
+        controller: '404errorCtrl',
+        })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/404errorview'
         });
     }]).controller('secondCtrl', ['$scope', function ($scope){
         $scope.helloWorld = "World Hello";
