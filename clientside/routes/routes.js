@@ -30,6 +30,10 @@
         templateUrl: 'templates/newplaceview.html',
         controller: 'huntingplacesCtrl',
         })
+        .when('/aboutmeview', {
+        templateUrl: 'templates/aboutmeview.html',
+        controller: 'aboutmeCtrl',
+        })
         .otherwise({
             redirectTo: '/'
         });
