@@ -181,17 +181,10 @@ app.post('/charac', function (req, res) {
 	var vocation = validator.trim(validator.escape(req.param('vocation')));
 	var stamina = validator.trim(validator.escape(req.param('stamina')));
 	var equipments = req.param('equipments');
-	var equipments.helmet = req.param('equipments.helmet');
-	var equipments.armor = req.param('equipments.armor');
-	var equipments.legs = req.param('equipments.legs');
-	var equipments.boots = req.param('equipments.boots');
-	var equipments.melee = req.param('equipments.melee');
-	var equipments.shield = req.param('equipments.shield');
-	var equipments.amulet = req.param('equipments.amulet');
 	var owner = validator.trim(validator.escape(req.param('owner')));
 
 
-	characController.save(name, level, vocation, stamina, equipments, owner, function(resp){
+	characController.save(name, level, vocation, stamina, equipments, owner function(resp){
 		res.json(resp);
 	});
 
