@@ -184,7 +184,7 @@ app.post('/charac', function (req, res) {
 	var owner = validator.trim(validator.escape(req.param('owner')));
 
 	//teste
-	characController.save(name, level, vocation, stamina, equipments, owner function(resp){
+	characController.save(name, level, vocation, stamina, equipments, owner function(resp)){
 		res.json(resp);
 	});
 
