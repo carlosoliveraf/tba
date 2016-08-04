@@ -174,21 +174,21 @@ app.get('/charac', function (req, res) {
 
 });
 
-app.post('/charac', function (req, res) {
+// app.post('/charac', function (req, res) {
 
-	var name = validator.trim(validator.escape(req.param('name')));
-	var level = validator.trim(validator.escape(req.param('level')));
-	var vocation = validator.trim(validator.escape(req.param('vocation')));
-	var stamina = validator.trim(validator.escape(req.param('stamina')));
-	var equipments = req.param('equipments');
-	var owner = validator.trim(validator.escape(req.param('owner')));
+// 	var name = validator.trim(validator.escape(req.param('name')));
+// 	var level = validator.trim(validator.escape(req.param('level')));
+// 	var vocation = validator.trim(validator.escape(req.param('vocation')));
+// 	var stamina = validator.trim(validator.escape(req.param('stamina')));
+// 	var equipments = req.param('equipments');
+// 	var owner = validator.trim(validator.escape(req.param('owner')));
 
-	//teste
-	characController.save(name, level, vocation, stamina, equipments, owner function(resp)){
-		res.json(resp);
-	});
+// 	//teste
+// 	characController.save(name, level, vocation, stamina, equipments, owner function(resp){
+// 		res.json(resp);
+// 	});
 
-});
+// });
 
 
 
