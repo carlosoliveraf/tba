@@ -119,12 +119,9 @@ app.get('/characters', function (req, res) {
 
 app.post('/characters', function (req, res) {
 
-	var name = validator.trim(validator.escape(req.param('name')));
-	var level = validator.trim(validator.escape(req.param('level')));
-	var stamina = validator.trim(validator.escape(req.param('stamina')));
-	var vocation = validator.trim(validator.escape(req.param('vocation')));
-
-	characterController.save(name, level, stamina, vocation, function(resp){
+	
+	var character = req.body;
+	characterController.save(character, function(resp){
 		res.json(resp);
 	});
 
@@ -133,6 +130,8 @@ app.post('/characters', function (req, res) {
 	//itens.push(item);
 	//res.end();
 });
+
+
 
 app.delete('/characters/:id', function (req, res) {
 

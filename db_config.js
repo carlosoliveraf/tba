@@ -19,36 +19,28 @@ db.once('open', function(){
 
 	exports.User = mongoose.model('User', userSchema);
 
-	var characterSchema = mongoose.Schema({
-		name: String,
-		level: Number,
-		stamina: Number,
-		vocation: String,
+	// var characterSchema = mongoose.Schema({
+	// 	name: String,
+	// 	level: Number,
+	// 	stamina: Number,
+	// 	vocation: String,
 
 		
-	});
+	// });
 
-	exports.Character = mongoose.model('Character', characterSchema);
+	// exports.Character = mongoose.model('Character', characterSchema);
 
-	var characSchema = mongoose.Schema({
+	var characterSchema = mongoose.Schema({
 		name: String,
 		level: Number,
 		vocation: String,
 		stamina: Number,
 		balance: Number,
-		equipments: {
-			helmet: String,
-			armor: String,
-			legs: String,
-			boots: String,
-			melee: String,
-			shield: String,
-			amulet: String,
-		},
+		equipments : [{ item1: String, item2: String }],
 		owner: String
 	});
 
-	exports.Charac = mongoose.model('charac', characSchema);
+	exports.Character = mongoose.model('Character', characterSchema);
 
 });
 

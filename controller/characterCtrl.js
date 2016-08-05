@@ -1,5 +1,6 @@
 var db = require('../db_config.js');
 
+
 exports.list = function(callback){
 
 	db.Character.find({}, function(error, characters) {
@@ -30,15 +31,9 @@ exports.character = function(id, callback) {
 };
 
 
-exports.save = function(name, level, stamina, vocation, callback){
+exports.save = function(character, callback){
 
-	new db.Character({
-
-		'name': name,
-		'level': level,
-		'stamina': stamina,
-		'vocation': vocation
-	}).save(function(error, character) {
+	new db.Character(character).save(function(error, character) {
 
 		if(error) {
 
