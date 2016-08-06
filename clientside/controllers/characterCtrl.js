@@ -24,7 +24,7 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 
 
 		$scope.findCharacters = function (character) {
-		$http.get('https://blooming-headland-84997.herokuapp.com/characters/').then(function (response) {
+		$http.get('http://localhost:5000/characters/').then(function (response) {
 			$scope.characters = response.data;
 		});
 		};
@@ -32,41 +32,22 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 		$scope.findCharacters();
 
 
-		// $scope.saveCharacter = function(character){
-		// 	console.log("post");
-			
-
-		// 	console.log(character);
-		// 	var res = $http.post('https://blooming-headland-84997.herokuapp.com/characters/', character);
-
-
-		// 	res.success(function(data, status, headers, config) {
-		// 	$scope.message = data;
-		// 	});
-		// 	res.error(function(data, status, headers, config) {
-		// 	alert( "failure message: " + JSON.stringify({data: data}));
-		// 	});		
-  //   		$scope.characters.push(character);
-  //   		$scope.newCharacter = false;
-		// 	delete $scope.character;
-
-		// };
 		
 
+		//https://blooming-headland-84997.herokuapp.com/characters/
+
 		$scope.saveCharacter = function(character){
-			character.name = "carlitosMaster";
 			character.equipments = {
-				helmet: "helm",
-				armor: "armor"
-			
+				'helmet': character.helmet,
+				'armor': character.armor
 			};
-			character.balance = 3000;
-			character.owner = "carlitosMaster";
+			delete character.helmet;
+			delete character.armor;
 			
 			var characString = JSON.stringify(character);
 			console.log(character);
 
-			var res = $http.post('https://blooming-headland-84997.herokuapp.com/characters/', character);
+			var res = $http.post('http://localhost:5000/characters', character);
 
 			res.success(function(data, status, headers, config) {
 			$scope.message = data;
@@ -84,7 +65,7 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 		$scope.eraseCharacter = function (character) {
 			var id = character._id;
 			console.log(id);
-			var res = $http.delete('https://blooming-headland-84997.herokuapp.com/characters/'+id);
+			var res = $http.delete('http://localhost:5000/characters/'+id);
 			res.success(function(data, status, headers, config) {
 			$scope.message = data;
 			var posicao = $scope.characters.indexOf(character);

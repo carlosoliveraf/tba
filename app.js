@@ -121,6 +121,7 @@ app.post('/characters', function (req, res) {
 
 	
 	var character = req.body;
+	console.log(req.body);
 	characterController.save(character, function(resp){
 		res.json(resp);
 	});
