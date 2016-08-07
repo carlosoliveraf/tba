@@ -3,6 +3,7 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 		$scope.newCharacter = false;
 		$scope.charactersList = false;
 		$scope.charactersStats = false;
+		$scope.characters = [];
 
 	        $scope.checkLogged = function(){
 					if($rootScope.logged){
@@ -37,9 +38,13 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 		$scope.findCharacters = function (character) {
 		//$http.get('http://localhost:5000/characters/').then(function (response) {
 		$http.get('https://lit-hamlet-34738.herokuapp.com/characters/').then(function (response) {
+			//$scope.characters = response.data;
+			for(index in response.data){
+				if(response.data[index].owner == $rootScope.username){
+					$scope.characters.push(response.data[index]);
+				};
+			};
 
-			
-			$scope.characters = response.data;
 		});
 		};
 
@@ -55,6 +60,7 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 				'helmet': character.helmet,
 				'armor': character.armor
 			};
+			character.owner = $rootScope.username;
 			delete character.helmet;
 			delete character.armor;
 			
