@@ -13,7 +13,7 @@
    <input style="margin-bottom: 0.5%;width: 35%; margin-right: auto; margin-left: auto;" type="text" style="" class="form-control" ng-model="user.username" name="username" placeholder="Username" ng-required="true"  ng-change="checkLogin(user)" ng-model-options="{ updateOn: 'default blur', debounce: { default: 600, blur: 0 } }"/>
    <label style="color: red;font-size: 85%" ng-if="userAlreadyTaken">This username is already in use!</label><br/>
 
-    <div style="width: 60%;margin: auto; display: table">
+    <div style="width: 50%;margin: auto; display: table">
    <label style="margin-right: 1.5%;float: left;" for="password">
     <span style="display: block; font-weight: bold;">Password:*</span>
     <input ng-model="user.password" class="form-control" style="padding: 5px;" type="password" id="company" placeholder="Password" ng-required="true"/>
