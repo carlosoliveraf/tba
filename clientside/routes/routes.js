@@ -3,8 +3,8 @@
         console.log('hola');
         $routeProvider
         .when('/', {
-            templateUrl: 'templates/index.html'
-            ,controller: 'indexCtrl'
+            templateUrl: 'templates/loginview.html'
+            ,controller: 'loginCtrl'
         })
         .when('/home', {
             templateUrl: 'templates/index.html'
@@ -13,6 +13,14 @@
         .when('/second', {
             templateUrl: 'templates/second.html'
             ,controller: 'secondCtrl'
+        })
+        .when('/loginview', {
+        templateUrl: 'templates/loginview.html',
+        controller: 'loginCtrl',
+        })
+        .when('/signinview', {
+        templateUrl: 'templates/signinview.html',
+        controller: 'signinCtrl',
         })
         .when('/charactersview', {
         templateUrl: 'templates/characters.html',
@@ -45,9 +53,10 @@
         .otherwise({
             redirectTo: '/404errorview'
         });
-    }]).controller('secondCtrl', ['$scope', function ($scope){
-        $scope.helloWorld = "World Hello";
     }]);
+    // .controller('secondCtrl', ['$scope', function ($scope){
+    //     $scope.helloWorld = "World Hello";
+    // }]);
 
 
 

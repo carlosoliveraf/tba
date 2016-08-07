@@ -30,15 +30,10 @@ exports.user = function(id, callback) {
 };
 
 
-exports.save = function(fullname, email, password, callback){
 
-	new db.User({
+exports.save = function(user, callback){
 
-		'fullname': fullname,
-		'email': email,
-		'password': password,
-		'created_at': new Date()
-	}).save(function(error, user) {
+	new db.User(user).save(function(error, user) {
 
 		if(error) {
 

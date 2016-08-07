@@ -117,6 +117,33 @@ app.get('/characters', function (req, res) {
 	//res.json(itens);
 });
 
+app.get('/users', function (req, res) {
+	//res.status(500).end();
+	
+	userController.list(function(resp){
+		res.json(resp);
+	});
+
+
+
+	//res.json(itens);
+});
+
+app.post('/users', function (req, res) {
+
+	
+	var user = req.body;
+	userController.save(user, function(resp){
+		res.json(resp);
+	});
+
+
+	//res.end("post")
+	//itens.push(item);
+	//res.end();
+});
+
+
 app.post('/characters', function (req, res) {
 
 	

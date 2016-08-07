@@ -1,8 +1,19 @@
-angular.module("main").controller("characterCtrl", function ($scope, $http) {
+angular.module("main").controller("characterCtrl", function ($rootScope, $scope, $http, $location) {
 	
 		$scope.newCharacter = false;
 		$scope.charactersList = false;
 		$scope.charactersStats = false;
+
+	        $scope.checkLogged = function(){
+					if($rootScope.logged){
+						$rootScope.menu = true;
+					}else{
+						$location.path('/loginview');
+					}
+	        };
+	        
+	        $scope.checkLogged();
+
 
 		$scope.vocations = [ 'Elite Knight', 'Royal Paladin', 'Master Sorcerer', 'Elder Druid'];
 
@@ -24,7 +35,10 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 
 
 		$scope.findCharacters = function (character) {
-		$http.get('http://localhost:5000/characters/').then(function (response) {
+		//$http.get('http://localhost:5000/characters/').then(function (response) {
+		$http.get('https://lit-hamlet-34738.herokuapp.com/characters/').then(function (response) {
+
+			
 			$scope.characters = response.data;
 		});
 		};
@@ -47,7 +61,8 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 			var characString = JSON.stringify(character);
 			console.log(character);
 
-			var res = $http.post('http://localhost:5000/characters', character);
+			//var res = $http.post('http://localhost:5000/characters', character);
+			var res = $http.post('https://lit-hamlet-34738.herokuapp.com/characters', character);
 
 			res.success(function(data, status, headers, config) {
 			$scope.message = data;
@@ -65,7 +80,8 @@ angular.module("main").controller("characterCtrl", function ($scope, $http) {
 		$scope.eraseCharacter = function (character) {
 			var id = character._id;
 			console.log(id);
-			var res = $http.delete('http://localhost:5000/characters/'+id);
+			//var res = $http.delete('http://localhost:5000/characters/'+id);
+			var res = $http.delete('https://lit-hamlet-34738.herokuapp.com/characters/'+id);
 			res.success(function(data, status, headers, config) {
 			$scope.message = data;
 			var posicao = $scope.characters.indexOf(character);

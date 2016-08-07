@@ -4,7 +4,7 @@
 	<select ng-model="character" style="margin: 2%; background-color: #ffffff; width: 35%;" class="form-control" name="vocation" ng-options="character.name for character in characters">
 		<option value="">Select the character</option>
 	</select>
-	<table class="table table-bordered" style="width: 95%; margin: 2%; table-layout: fixed;
+	<table class="table" style="width: 95%; margin: 2%; table-layout: fixed;
   border-collapse: collapse;" ng-if="character">
 		<tr>
 			<th ng-click="setOrder('name')">Name</th>

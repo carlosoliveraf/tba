@@ -11,13 +11,15 @@
         }
         </style>
 </head>
-<body>
+<body background="clientside/img/wall.jpg" style="background-repeat:no-repeat; background-size:cover;">
     
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <script src="clientside/app.js"></script>
     <script src="clientside/routes/routes.js"></script>
     <script src="clientside/controllers/indexCtrl.js"></script>
+    <script src="clientside/controllers/loginCtrl.js"></script>
+    <script src="clientside/controllers/signinCtrl.js"></script>
     <script src="clientside/controllers/characterCtrl.js"></script>
     <script src="clientside/controllers/huntingplacesCtrl.js"></script>
     <script src="clientside/controllers/aboutmeCtrl.js"></script>
@@ -30,13 +32,13 @@
   <!--   <section ng-view=""></section> -->
   
 	<div id="title" style="width: 100%">
-  <div style="text-align: center"><p style="font-family: 'Courier New', Courier, monospace; font-size: 25px"><strong>Tibia Character Monitor</strong></p></div>
+  <div style="text-align: center; margin-top: 3%"><p style="font-family: 'Courier New', Courier, monospace; font-size: 25px"><strong>Tibia Character Monitor</strong></p></div>
 
 	</div>
 
     
     
-    <div id="menu" >
+    <div id="menu" ng-if="menu">
       <ul style="color: white; padding: 1%" class="nav nav-tabs">
         <li class="marginPerson">
           <div class="dropdown"><a href="#/home" class="btn btn-default btn-sm">Home</a>
@@ -73,7 +75,11 @@
          <li class="marginPerson">
           <div class="dropdown"><a href="#/aboutmeview" class="btn btn-default btn-sm">About me</a>
           </div>
-        </li>
+        </li>        
+        <div class="dropdown" style="position: fixed; margin-left: 85%">
+        <li  style="color: black">Welcome <strong>{{username}}!
+        <a style="color: black; text-decoration: underline;text-decoration: bold" href="#/" class="btn btn-sm">Logoff</a></strong>
+        </li></div>
       </ul>
     </div>
     <div id="view" ng-view></div>

@@ -11,24 +11,15 @@ db.on('error', console.error.bind(console, 'Erro ao conectar banco'));
 
 db.once('open', function(){
 	var userSchema = mongoose.Schema({
-		fullname: String,
+		name: String,
 		email: String,
+		username: String,
 		password: String,
 		created_at: Date
 	});
 
 	exports.User = mongoose.model('User', userSchema);
 
-	// var characterSchema = mongoose.Schema({
-	// 	name: String,
-	// 	level: Number,
-	// 	stamina: Number,
-	// 	vocation: String,
-
-		
-	// });
-
-	// exports.Character = mongoose.model('Character', characterSchema);
 
 	var characterSchema = mongoose.Schema({
 		name: String,
