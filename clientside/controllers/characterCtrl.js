@@ -5,15 +5,15 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 		$scope.charactersStats = false;
 		$scope.characters = [];
 
-	    //     $scope.checkLogged = function(){
-					// if($rootScope.logged){
-					// 	$rootScope.menu = true;
-					// }else{
-					// 	$location.path('/loginview');
-					// }
-	    //     };
+	        $scope.checkLogged = function(){
+					if($rootScope.logged){
+						$rootScope.menu = true;
+					}else{
+						$location.path('/loginview');
+					}
+	        };
 	        
-	    //     $scope.checkLogged();
+	        $scope.checkLogged();/
 
 
 		$scope.vocations = [ 'Elite Knight', 'Royal Paladin', 'Master Sorcerer', 'Elder Druid'];

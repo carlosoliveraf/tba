@@ -46,28 +46,36 @@ exports.save = function(character, callback){
 };
 
 
-exports.update = function(id, name, level, stamina, vocation, callback) {
+exports.update = function(id, characterParam, callback) {
 
 	db.Character.findById(id, function(error, character) {
 
-		if(name) {
+		if(characterParam.name) {
 
-			character.name = name;
+			character.name = characterParam.name;
 		}
 
-		if(level) {
+		if(characterParam.level) {
 
-			character.level = level;
+			character.level = characterParam.level;
 		}
 
-		if(stamina) {
+		if(characterParam.stamina) {
 
-			character.stamina = stamina;
+			character.stamina = characterParam.stamina;
 		}
 
-		if(vocation) {
+		if(characterParam.vocation) {
 
-			character.vocation = vocation;
+			character.vocation = characterParam.vocation;
+		}
+		if(characterParam.balance) {
+
+			character.vocation = characterParam.balance;
+		}
+		if(characterParam.owner) {
+
+			character.vocation = characterParam.owner;
 		}
 
 		character.save(function(error, character) {

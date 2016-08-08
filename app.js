@@ -117,6 +117,19 @@ app.get('/characters', function (req, res) {
 	//res.json(itens);
 });
 
+app.get('/characters/:id', function (req, res) {
+
+	var id = req.param('id');
+	characterController.character(id, function(resp){
+		res.json(resp);
+
+	});
+
+
+	//res.status(500).end();
+	// res.json(itens);
+});
+
 app.get('/users', function (req, res) {
 	//res.status(500).end();
 	
@@ -178,13 +191,8 @@ app.delete('/characters/:id', function (req, res) {
 
 app.put('/characters/:id', function (req, res) {
 		
-	var id = req.param('id');
-	var name = validator.trim(validator.escape(req.param('name')));
-	var level = validator.trim(validator.escape(req.param('level')));
-	var stamina = validator.trim(validator.escape(req.param('stamina')));
-	var vocation = validator.trim(validator.escape(req.param('vocation')));
-
-	characterController.update(id, name, level, stamina, vocation, function(resp){
+	var character = req.body;
+	characterController.update(id, character, function(resp){
 		res.json(resp);
 
 	});
