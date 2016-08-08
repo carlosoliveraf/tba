@@ -23,7 +23,8 @@
     <input ng-model="user.confirmPassword" class="form-control" type="password" id="contact" placeholder="Password" ng-required="true" ng-model-options="{ updateOn: 'default blur', debounce: { default: 600, blur: 0 } }" ng-change="checkPassword(user)"/>
   </label>
 </div>
-   <label style="color: red;font-size: 85%" ng-if="difPasswords">The passwords don't match!</label>
+<div style="color: red;font-size: 85%;" ng-if="difPasswords">
+   <label>The passwords don't match!</label></div>
 </form>
 <div style="text-align: right; width: 70%; margin: auto;">
 <label style="margin-top: 2%;color: black;font-size: 85%; text-align: right">* Required fields.</label>

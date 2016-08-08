@@ -5,15 +5,15 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 		$scope.charactersStats = false;
 		$scope.characters = [];
 
-	        $scope.checkLogged = function(){
-					if($rootScope.logged){
-						$rootScope.menu = true;
-					}else{
-						$location.path('/loginview');
-					}
-	        };
+	    //     $scope.checkLogged = function(){
+					// if($rootScope.logged){
+					// 	$rootScope.menu = true;
+					// }else{
+					// 	$location.path('/loginview');
+					// }
+	    //     };
 	        
-	        $scope.checkLogged();
+	    //     $scope.checkLogged();
 
 
 		$scope.vocations = [ 'Elite Knight', 'Royal Paladin', 'Master Sorcerer', 'Elder Druid'];
@@ -56,13 +56,13 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 		//https://blooming-headland-84997.herokuapp.com/characters/
 
 		$scope.saveCharacter = function(character){
-			character.equipments = {
-				'helmet': character.helmet,
-				'armor': character.armor
-			};
+			// character.equipments = {
+			// 	'helmet': character.helmet,
+			// 	'armor': character.armor
+			// };
 			character.owner = $rootScope.username;
-			delete character.helmet;
-			delete character.armor;
+			// delete character.helmet;
+			// delete character.armor;
 			
 			var characString = JSON.stringify(character);
 			console.log(character);
@@ -72,6 +72,7 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 
 			res.success(function(data, status, headers, config) {
 			$scope.message = data;
+			alert( "Character created!");
 			});
 			res.error(function(data, status, headers, config) {
 			alert( "failure message: " + JSON.stringify({data: data}));
