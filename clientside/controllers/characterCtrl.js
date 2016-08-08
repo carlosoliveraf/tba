@@ -13,7 +13,7 @@ angular.module("main").controller("characterCtrl", function ($rootScope, $scope,
 					}
 	        };
 	        
-	        $scope.checkLogged();/
+	        $scope.checkLogged();
 
 
 		$scope.vocations = [ 'Elite Knight', 'Royal Paladin', 'Master Sorcerer', 'Elder Druid'];
