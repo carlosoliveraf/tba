@@ -1,8 +1,8 @@
 <div style="width: 30%; display: table; margin: auto;margin-top: 2%; border-radius: 10%">
 
 <div style="width: 60%; margin: auto; margin-top: 25%;margin-bottom: 27%; text-align: center">
-    <label>Login</label>
-<input style="margin-bottom: 10%" type="text" style="" class="form-control" ng-model="params.login" name="login" placeholder="Login" ng-required="true"/>
+    <label>Username</label>
+<input style="margin-bottom: 10%" type="text" style="" class="form-control" ng-model="params.login" name="username" placeholder="Username" ng-required="true"/>
 
 <!-- show password as type="password" -->
 <div ng-if="!showPassword"
@@ -33,7 +33,7 @@
           style="cursor: pointer; pointer-events: all;">
     </span>
   </div>
-  <div ng-if="error"><label style="color: red">Incorrect login or password! </label></div>
+  <div ng-if="error"><label style="color: red">Incorrect username or password! </label></div>
   <div style="text-align: center">
             <button ng-click="login(params)" class="btn btn-default" style="margin: auto;width: 150px; display: inline-block; margin-top: 10%" type="button" data-toggle="dropdown">Login
             </button></div>
